@@ -8,7 +8,7 @@ st.title("Profit Predictor")
 rdSpend = float(st.text_input("Enter R&D Spend: ","100000"))
 adminSpend = float(st.text_input("Enter Administration Spend: ","100000"))
 markSpend = float(st.text_input("Enter Marketing Spend: ","100000"))
-state = st.text_input("Enter State: ","New York")
+state = st.selectbox("Which State is the company in?",("California", "Florida", "New York"))
 stateEncoded = ohe.transform(np.array([[state]]))
 
 features = np.concatenate((stateEncoded,np.array([[rdSpend,adminSpend,markSpend]])), axis = 1)
