@@ -11,7 +11,7 @@ markSpend = float(st.text_input("Enter Marketing Spend: ","100000"))
 state = st.text_input("Enter State: ","New York")
 stateEncoded = ohe.transform(np.array([[state]]))
 
-features = np.concatenate((stateEncoded,np.array([[rdSpend,admSpend,markSpend]])), axis = 1)
+features = np.concatenate((stateEncoded,np.array([[rdSpend,adminSpend,markSpend]])), axis = 1)
 
 if st.button("Predict"):
   st.write(f"Predicted Profit is ${model.predict(features)}")
